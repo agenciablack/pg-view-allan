@@ -40,7 +40,7 @@
       margin: 0 auto;
     }
 
-    .page-wrapper img {
+    .page-wrapper > img:not(.botao-img) {
       width: 100%;
       height: auto;
       display: block;
@@ -49,18 +49,39 @@
     .btn-overlay {
       position: absolute;
       cursor: pointer;
-      z-index: 10;
+      z-index: 20;
       /* background: rgba(255, 0, 0, 0.3); */
     }
 
     .btn-overlay:hover {
     }
 
+    /* Container do botão + saiba mais — pulse sincronizado */
+    .botao-group {
+      position: absolute;
+      z-index: 10;
+      top: 16.5%;       /* ← posição vertical do grupo */
+      left: 10.6%;      /* ← posição horizontal do grupo */
+      width: 33%;       /* ← largura do grupo */
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+/* Imagem Botao.png */
+    .botao-img {
+      width: 100%;
+      height: auto;
+    }
+
     /* Botao "Saiba mais!" 1 */
     .btn-saiba-mais {
       left: 15%;
       right: 61%;
-      top: 18.35%;
+      top: 18.3%;
       height: 1.5%;
     }
 
@@ -71,13 +92,93 @@
       top: 38.05%;
       height: 1.5%;
     }
+
+    /* Ficha Hero */
+    .ficha-hero-container {
+      position: absolute;
+      z-index: 15;
+      top: 8.8%;
+      left: 81.1%;
+      transform: translateX(-50%);
+      width: 7.5%;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    .ficha-hero-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Texto e Ícones - Marquee */
+    .texto-icones-wrapper {
+      position: absolute;
+      z-index: 15;
+      top: 23.2%;
+      left: 0%;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .texto-icones-container {
+      transform-origin: center center;
+      transform: rotate(1.5deg);
+    }
+
+    .texto-icones-track {
+      display: flex;
+      width: max-content;
+      animation: scrollLeft 60s linear infinite;
+    }
+
+    .texto-icones-track img {
+      width: 100.5vw;
+      max-width: 1930px;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .page-wrapper {
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
   <div class="page-wrapper">
+    <!-- Ficha Hero -->
+    <div class="ficha-hero-container" id="fichaHero">
+      <img src="ficha hero.png" alt="Ficha Hero">
+    </div>
+
     <img src="VIEW-LP-ALLACABRAL.png" alt="Allan Cabral - Landing Page">
     <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="btn-overlay btn-saiba-mais" aria-label="Saiba mais"></a>
     <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="btn-overlay btn-saiba-mais-2" aria-label="Saiba mais"></a>
+    <!-- Texto e Ícones - Marquee -->
+    <div class="texto-icones-wrapper">
+      <div class="texto-icones-container">
+        <div class="texto-icones-track">
+          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+        </div>
+      </div>
+    </div>
+
+    <div class="botao-group">
+      <img src="Botao.png" alt="Botão" class="botao-img">
+    </div>
   </div>
 </body>
 </html>
