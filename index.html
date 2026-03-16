@@ -152,32 +152,166 @@
     .page-wrapper {
       overflow: hidden;
     }
+
+    /* Mobile */
+    .mobile-only {
+      display: none;
+    }
+
+    /* Mobile Texto e Ícones */
+    .mobile-texto-wrapper {
+      position: absolute;
+      z-index: 15;
+      top: 18%;
+      left: -12.6%;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .mobile-texto-container {
+      transform-origin: center center;
+      transform: rotate(1.7deg);
+    }
+
+    .mobile-texto-track {
+      display: flex;
+      width: max-content;
+      animation: scrollLeft 60s linear infinite;
+    }
+
+    .mobile-texto-track img {
+      width: 182.5vw;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* Mobile Ficha Hero */
+    .mobile-ficha-hero {
+      position: absolute;
+      z-index: 15;
+      top: 6.6%;
+      left: 80%;
+      transform: translateX(-50%);
+      width: 11.5%;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .mobile-ficha-hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Mobile Botão */
+    .mobile-botao-group {
+      position: absolute;
+      z-index: 10;
+      top: 20.6%;
+      left: 19.8%;
+      width: 60%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .mobile-botao-group img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Mobile Botões Link */
+    .mobile-btn-1 {
+      position: absolute;
+      z-index: 20;
+      cursor: pointer;
+      top: 32.1%;
+      left: 28.4%;
+      width: 43.5%;
+      height: 1.8%;
+    }
+
+    .mobile-btn-2 {
+      position: absolute;
+      z-index: 20;
+      cursor: pointer;
+      top: 46.7%;
+      left: 28.7%;
+      width: 40.5%;
+      height: 4%;
+    }
+
+    @media (max-width: 1024px) {
+      .desktop-only {
+        display: none !important;
+      }
+      .mobile-only {
+        display: block;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+      .mobile-only > img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page-wrapper">
-    <!-- Ficha Hero -->
-    <div class="ficha-hero-container" id="fichaHero">
-      <img src="ficha hero.png" alt="Ficha Hero">
-    </div>
+    <!-- DESKTOP -->
+    <div class="desktop-only">
+      <!-- Ficha Hero -->
+      <div class="ficha-hero-container" id="fichaHero">
+        <img src="ficha hero.png" alt="Ficha Hero">
+      </div>
 
-    <img src="VIEW-LP-ALLACABRAL.png" alt="Allan Cabral - Landing Page">
-    <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="btn-overlay btn-saiba-mais" aria-label="Saiba mais"></a>
-    <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="btn-overlay btn-saiba-mais-2" aria-label="Saiba mais"></a>
-    <!-- Texto e Ícones - Marquee -->
-    <div class="texto-icones-wrapper">
-      <div class="texto-icones-container">
-        <div class="texto-icones-track">
-          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
-          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
-          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
-          <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+      <img src="VIEW-LP-ALLACABRAL.png" alt="Allan Cabral - Landing Page">
+      <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="btn-overlay btn-saiba-mais" aria-label="Saiba mais"></a>
+      <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="btn-overlay btn-saiba-mais-2" aria-label="Saiba mais"></a>
+      <!-- Texto e Ícones - Marquee -->
+      <div class="texto-icones-wrapper">
+        <div class="texto-icones-container">
+          <div class="texto-icones-track">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+          </div>
         </div>
+      </div>
+
+      <div class="botao-group">
+        <img src="Botao.png" alt="Botão" class="botao-img">
       </div>
     </div>
 
-    <div class="botao-group">
-      <img src="Botao.png" alt="Botão" class="botao-img">
+    <!-- MOBILE -->
+    <div class="mobile-only">
+      <img src="VIEW-LP-ALLACABRAL-Mobile.png" alt="Allan Cabral - Mobile">
+      <!-- Ficha Hero Mobile -->
+      <div class="mobile-ficha-hero" id="mobileFichaHero">
+        <img src="ficha hero.png" alt="Ficha Hero">
+      </div>
+      <!-- Texto e Ícones Mobile -->
+      <div class="mobile-texto-wrapper" id="mobileTextoWrapper">
+        <div class="mobile-texto-container" id="mobileTextoContainer">
+          <div class="mobile-texto-track">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+            <img src="TEXTO E ÍCONES.png" alt="Texto e Ícones">
+          </div>
+        </div>
+      </div>
+      <!-- Botão Mobile -->
+      <div class="mobile-botao-group" id="mobileBotaoGroup">
+        <img src="Botao.png" alt="Botão">
+      </div>
+      <!-- Links Mobile -->
+      <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="mobile-btn-1" id="mobileBtn1" aria-label="Saiba mais 1"></a>
+      <a href="https://1pra1.pro/facebook" target="_blank" rel="noopener noreferrer" class="mobile-btn-2" id="mobileBtn2" aria-label="Saiba mais 2"></a>
     </div>
   </div>
 </body>
