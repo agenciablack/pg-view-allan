@@ -315,6 +315,14 @@
     </div>
   </div>
 
+  <script>
+    document.querySelectorAll('.btn-overlay, .mobile-btn-1, .mobile-btn-2').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+        }
+      });
+    });
   </script>
 </body>
 </html>
